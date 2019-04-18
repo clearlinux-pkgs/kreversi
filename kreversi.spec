@@ -5,12 +5,12 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kreversi
-Version  : 18.12.3
-Release  : 4
-URL      : https://download.kde.org/stable/applications/18.12.3/src/kreversi-18.12.3.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.12.3/src/kreversi-18.12.3.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.12.3/src/kreversi-18.12.3.tar.xz.sig
-Summary  : No detailed summary available
+Version  : 19.04.0
+Release  : 5
+URL      : https://download.kde.org/stable/applications/19.04.0/src/kreversi-19.04.0.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.04.0/src/kreversi-19.04.0.tar.xz
+Source99 : https://download.kde.org/stable/applications/19.04.0/src/kreversi-19.04.0.tar.xz.sig
+Summary  : A simple one player strategy game played against the computer
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
 Requires: kreversi-bin = %{version}-%{release}
@@ -68,23 +68,22 @@ locales components for the kreversi package.
 
 
 %prep
-%setup -q -n kreversi-18.12.3
+%setup -q -n kreversi-19.04.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552005841
+export SOURCE_DATE_EPOCH=1555619702
 mkdir -p clr-build
 pushd clr-build
-export LDFLAGS="${LDFLAGS} -fno-lto"
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1552005841
+export SOURCE_DATE_EPOCH=1555619702
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kreversi
 cp COPYING %{buildroot}/usr/share/package-licenses/kreversi/COPYING

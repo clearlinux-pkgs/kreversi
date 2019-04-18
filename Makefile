@@ -1,5 +1,5 @@
 PKG_NAME := kreversi
-URL = https://download.kde.org/stable/applications/18.12.3/src/kreversi-18.12.3.tar.xz
+URL = https://download.kde.org/stable/applications/19.04.0/src/kreversi-19.04.0.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
